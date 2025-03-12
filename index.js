@@ -19,12 +19,12 @@ mdb
   app.listen(port, () => console.log(`Server is running on port: ${port}`));
   app.post("/details", (req, res) => {
     try {
-      const {Title,Date,Description,Category} = req.body;
+      const {Title,Date,Description/*,Category*/} = req.body;
       const details = new Details({
         Title:Title,
         Date:Date,
         Description:Description,
-        Category:Category
+        // Category:Category
       }); 
       details.save();
       console.log("Details Stored");
