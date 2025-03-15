@@ -2,13 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require('cors');
 const app = express();
-app.use(cors
-  ({
-    origin: 'http://localhost:5173', // Allow requests from this origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-  }
-));
+app.use(cors());
 dotenv.config();
 const Details = require("./model/details");
 const mdb = require("mongoose");
