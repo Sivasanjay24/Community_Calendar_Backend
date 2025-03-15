@@ -1,8 +1,10 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require('cors');
+const app = express();
+app.use(cors());
 dotenv.config();
 const Details = require("./model/details");
-const app = express();
 const mdb = require("mongoose");
 const MONGO_URL=process.env.MONGO_URL
 app.use(express.json());
@@ -35,3 +37,4 @@ mdb
       res.status(400).json({ message: "Details Updatefailed", isStored: false });
     }
   });
+
